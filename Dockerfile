@@ -17,7 +17,7 @@ RUN yum install --enablerepo=epel,remi-php56,remi -y \
                               php-pdo \
                               php-xml \
                               php-xdebug
-RUN sed -i -e "s|^;date.timezone =.*$|date.timezone = Asia/Tokyo|" /etc/php.ini
+RUN sed -i -e "s|^;date.timezone =.*$|date.timezone = Europe/Berlin|" /etc/php.ini
 
 ADD . $code_root
 RUN test -e $httpd_conf && echo "Include $httpd_conf" >> /etc/httpd/conf/httpd.conf
